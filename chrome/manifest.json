@@ -1,7 +1,7 @@
 {
   "name": "Github Static Nav",
   "description": "Make the tabs of a repository stay at the top of the page when scrolling.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "manifest_version": 2,
   "author": "Tony Li",
   "homepage_url": "https://github.com/tonglil/github-static-nav",

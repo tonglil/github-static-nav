@@ -1,7 +1,7 @@
 {
   "title": "Github Static Tabs",
   "name": "github-static-tabs",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Make the tabs of a repository stay at the top of the page when scrolling.",
   "main": "index.js",
   "author": "Tony Li",
