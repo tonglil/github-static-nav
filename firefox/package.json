@@ -5,6 +5,7 @@
   "description": "Make the tabs of a repository stay at the top of the page when scrolling.",
   "main": "index.js",
   "author": "Tony Li",
+  "homepage": "https://github.com/tonglil/github-static-nav",
   "engines": {
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"
