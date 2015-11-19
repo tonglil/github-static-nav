@@ -18,7 +18,7 @@ var pageMod = require('sdk/page-mod');
 pageMod.PageMod({
   include: [
     "http://github.com/*",
-    "https://github.com/*"
+    "https://github.com/*",
   ],
   contentScriptFile: [
     './script.js',
