@@ -1,0 +1,6 @@
+.pagehead.github-shift-down {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0px;
+}
