@@ -1,7 +1,15 @@
 window.onload = runOnScroll();
-window.addEventListener('scroll', runOnScroll);
+window.addEventListener('scroll', scrollNav);
+window.addEventListener('scroll', scrollToolbar);
 
 function runOnScroll() {
+  scrollNav();
+  scrollToolbar();
+}
+
+function scrollNav() {
+  scrollToolbar();
+
   var nav = document.getElementsByClassName('pagehead repohead experiment-repo-nav');
   nav = nav[0];
   var targetOffset = nav.offsetTop;     // 49
@@ -15,6 +23,11 @@ function runOnScroll() {
   var page = document.getElementById('js-repo-pjax-container');
 
   var newClass = 'github-shift-down';
+  var toolbar = document.getElementsByClassName('pr-toolbar js-sticky');
+
+  if (toolbar.length > 0) {
+    newClass = 'github-shift-down-toolbar';
+  }
 
   if (window.scrollY > targetOffset) {
     nav.classList.add(newClass);
@@ -27,5 +40,32 @@ function runOnScroll() {
   } else {
     nav.classList.remove(newClass);
     page.style.marginTop = 0;
+  }
+}
+
+function scrollToolbar() {
+  var toolbar = document.getElementsByClassName('pr-toolbar js-sticky');
+
+  if (toolbar.length > 0) {
+    // Chrome has a 'is-placeholder' 'pr-toolbar' element
+    toolbar = toolbar[toolbar.length-1];
+    var targetOffset = toolbar.offsetTop;
+
+    var header = document.getElementsByClassName('header');
+    header = header[0];
+    var scrollbackHeight = header.offsetHeight;
+
+    var newClass = 'github-shift-toolbar-down';
+
+    if (window.scrollY > targetOffset) {
+      toolbar.classList.add(newClass);
+      toolbar.style.top = "99px";
+
+      if (window.scrollY < scrollbackHeight) {
+        toolbar.classList.remove(newClass);
+      }
+    } else {
+      toolbar.classList.remove(newClass);
+    }
   }
 }
